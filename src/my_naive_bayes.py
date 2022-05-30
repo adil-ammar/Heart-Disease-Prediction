@@ -38,7 +38,7 @@ class MyNaiveBayes:
     #given the class, mean, and variance
     def gaussian_density(self, x, Mean, Variance):
         const = 1 / np.sqrt(Variance * 2 * np.pi)
-        probability = np.exp(-0.5 * (np.square(x - Mean)/Variance))
+        probability = np.exp(-0.5 * (np.square((x - Mean)/Variance)))
         return const * probability
 
     def init_statistics(self, X, y):
