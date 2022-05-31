@@ -87,10 +87,10 @@ def main():
     # print(*my_precision)
     # print('my_recall')
     # print(*my_recall)
-    print(*my_tp)
+    # print(*my_tp)
     plt.figure(1)
-    plt.plot(testSizes, sklearn_accuracy, label= "sklearn", color='green')
-    plt.plot(testSizes, my_accuracy, label='my_bayes', color='blue')
+    plt.scatter(testSizes, sklearn_accuracy, label= "sklearn", color='green')
+    plt.scatter(testSizes, my_accuracy, label='my_bayes', color='blue')
     plt.xlabel('Test Sizes')
     plt.ylabel('Accuracy')
     plt.title("Accuracy Comparision")
@@ -98,8 +98,8 @@ def main():
     plt.savefig('naive_bayes_acc.png')
     
     plt.figure(2)
-    plt.plot(testSizes, sklearn_precision, label= "sklearn", color='green')
-    plt.plot(testSizes, my_precision, label='my_bayes', color='blue')
+    plt.scatter(testSizes, sklearn_precision, label= "sklearn", color='green')
+    plt.scatter(testSizes, my_precision, label='my_bayes', color='blue')
     plt.xlabel('Test Sizes')
     plt.ylabel('Precision')
     plt.title('Precision Comparision')
@@ -107,8 +107,8 @@ def main():
     plt.savefig('naive_bayes_pre.png')
 
     plt.figure(3)
-    plt.plot(testSizes, sklearn_recall, label= "sklearn", color='green')
-    plt.plot(testSizes, my_recall, label='my_bayes', color='blue')
+    plt.scatter(testSizes, sklearn_recall, label= "sklearn", color='green')
+    plt.scatter(testSizes, my_recall, label='my_bayes', color='blue')
     plt.xlabel('Test Sizes')
     plt.ylabel('Recall')
     plt.title('Recall Comparision')
@@ -116,8 +116,8 @@ def main():
     plt.savefig('naive_bayes_rec.png')
 
     plt.figure(4)
-    plt.plot(testSizes, sklearn_fn, label= "sklearn", color='green')
-    plt.plot(testSizes, my_fn, label='my_bayes', color='blue')
+    plt.scatter(testSizes, sklearn_fn, label= "sklearn", color='green')
+    plt.scatter(testSizes, my_fn, label='my_bayes', color='blue')
     plt.xlabel('Test Sizes')
     plt.ylabel('False Negatives')
     plt.title('False Negatives Comparision')
@@ -125,8 +125,8 @@ def main():
     plt.savefig('naive_bayes_fn.png')
 
     plt.figure(5)
-    plt.plot(testSizes, sklearn_fp, label= "sklearn", color='green')
-    plt.plot(testSizes, my_fp, label='my_bayes', color='blue')
+    plt.scatter(testSizes, sklearn_fp, label= "sklearn", color='green')
+    plt.scatter(testSizes, my_fp, label='my_bayes', color='blue')
     plt.xlabel('Test Sizes')
     plt.ylabel('False Positives')
     plt.title('False Positives Comparision')
@@ -134,8 +134,8 @@ def main():
     plt.savefig('naive_bayes_fp.png')
 
     plt.figure(6)
-    plt.plot(testSizes, sklearn_tp, label= "sklearn", color='green')
-    plt.plot(testSizes, my_tp, label='my_bayes', color='blue')
+    plt.scatter(testSizes, sklearn_tp, label= "sklearn", color='green')
+    plt.scatter(testSizes, my_tp, label='my_bayes', color='blue')
     plt.xlabel('Test Sizes')
     plt.ylabel('True Positives')
     plt.title('True Positives Comparision')
@@ -143,14 +143,18 @@ def main():
     plt.savefig('naive_bayes_tp.png')
 
     plt.figure(7)
-    plt.plot(testSizes, sklearn_tn, label= "sklearn", color='green')
-    plt.plot(testSizes, my_tn, label='my_bayes', color='blue')
+    plt.scatter(testSizes, sklearn_tn, label= "sklearn", color='green')
+    plt.scatter(testSizes, my_tn, label='my_bayes', color='blue')
     plt.xlabel('Test Sizes')
     plt.ylabel('True Negatives')
     plt.title('True Negatives Comparision')
     plt.legend()
     plt.savefig('naive_bayes_tn.png')
 
+    
+    d = {'testSizes':testSizes, 'sklearn_accuracy':sklearn_accuracy, 'my_accuracy':my_accuracy, 'sklearn_precision':sklearn_precision, 'my_precision':my_precision, 'sklearn_recall':sklearn_recall, 'my_recall':my_recall}
+    dx = pd.DataFrame(d, columns=['testSizes', 'sklearn_accuracy', 'my_accuracy', 'sklearn_precision', 'my_precision', 'sklearn_recall','my_recall'])
+    dx.to_csv('nb_res.csv', sep='\t', encoding='utf-8')
     sys.exit()
 
 if __name__ == '__main__':
