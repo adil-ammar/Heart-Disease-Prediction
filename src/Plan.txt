@@ -1,4 +1,0 @@
-This notebook will contain the general protocol that we shall follow in our approaches.
-It will include Evaluation metrics, Visualization, etc. It will be updated on the go.
-
-1. Create your own branch.
