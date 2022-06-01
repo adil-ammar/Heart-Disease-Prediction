@@ -1,15 +1,13 @@
 # Heart-Disease-Prediction
 ## File Structure
 ### Following are the files corresponding to the library implementation
-#### knn.ipynb
-#### naive_bayes.ipynb
-#### decision_trees.ipynb
-#### SVM.ipynb
+#### 1. knn.ipynb
+#### 2. naive_bayes.ipynb
+#### 3. decision_trees.ipynb
+#### 4. SVM.ipynb
 
 ### Following are the files corresponding to the implementation from scratch
-#### knn_scratch.ipynb
-#### my_naive_bayes.ipynb
-#### my_naive_bayes.py
-#### naive_graph.py
-#### decision_trees_from_scratch.ipynb
-#### final_SVM.ipynb
+#### 1. knn_scratch.ipynb
+#### 2. my_naive_bayes.ipynb, my_naive_bayes.py, naive_graph.py
+#### 3. decision_trees_from_scratch.ipynb
+#### 4. final_SVM.ipynb
